@@ -1,0 +1,242 @@
+*{
+    margin: 0px;
+    padding:0;
+    font-family: Consolas;
+}
+h1{
+    margin: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+button{
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: #0095ff;
+    cursor: pointer;
+    border: 1px solid lightskyblue;
+    margin:10px;
+}
+button:hover{
+    background-color: black;
+}
+.alert-alert-success{
+    margin-top: 15px;
+    color:rgb(71, 245, 71);
+    text-align: center;
+}
+.alert-alert-danger{
+    margin-top: 15px;
+    color:rgb(243, 64, 64);
+    text-align: center;
+}
+.alert-alert-warning{
+    margin-top: 15px;
+    color:rgb(238, 127, 127);
+    text-align: center;
+}
+.alert-alert-info{
+    margin-top: 15px;
+    color:rgb(250, 247, 51);
+    text-align: center;
+}
+
+.alert-error{
+    color: red;
+    text-align: center;
+}
+.header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+.header .row{
+    display: flex;
+    background-color:  #481948;
+    height: 50px;
+    width: 100%;
+}
+.header .row ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-left: auto;
+}
+.footer{
+    height: 30px;
+    background-color: #481948;
+}
+.footer p{
+    color: white;
+    text-align: center;
+    font-family: Consolas;
+    font-size: 10px;
+    padding-top: 8px;
+}
+.ask-sec{
+    height: 220px;
+    margin-left: 10px;
+}
+.ask-sec .row{
+    display: flex;
+    justify-content: center;
+    padding-top: 110px;
+}
+.ask-sec .row input{
+    border: 1.5px solid #f48024;
+    width: 600px;
+}
+.ask-sec>.row>button{
+    background-color: #f48024;
+}
+.ask-sec>.row>button:hover{
+    background-color: black;
+}
+.theme-sec>.row{
+    height: 335px;
+    width: 100%;
+    background-color: #6e226e;
+}
+.theme-sec>.row>h2{
+    text-align: center;
+    color: White;
+    font-family: Consolas;
+    padding-top: 60px;
+    font-size: 25px;
+}
+.theme-sec>.row>.set{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.fa-utensils, .fa-laptop-code, .fa-bed, .fa-redo-alt{
+    font-size: 45px;
+    color: white;
+    margin-right: 20px;
+}
+.top-geek-sec{
+    height: auto;
+    border-bottom: black;
+    background-color: #f5efef;
+}
+
+.top-geek-sec> .row{
+    width: auto;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    background-color:  #dfebf8;
+    border-bottom: 1px solid rgb(102, 18, 102);
+}
+.top-geek-sec> h2{
+    text-align: center;
+    color: black;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    height: 580px;
+}
+.container .sign-form{
+    margin-top: 120px;
+    height: 400px;
+    width: 400px;
+    background-color: #6e226e;
+}
+.container .sign-form h3{
+    margin-top: 30px;
+}
+.container .sign-form form{
+    margin-top: 30px;
+    margin-left: 70px;
+}
+.container .sign-form form input{
+    height: 25px;
+    width: 250px;
+    margin-bottom: 10px;
+
+}
+.container .sign-form button{
+    width: 253px;
+    margin-left: 0;
+}
+.home-body{
+    height: 1200px;
+    width: auto;
+}
+.home-body .home-nav{
+    overflow: hidden;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    background-color: black;
+    opacity: 90%;
+    display: flex;
+}
+.home-body .home-nav ul{
+    display: flex;
+    color: white;
+    justify-content: flex-start;
+}
+.home-body .home-nav ul li{
+    padding: 10px;
+    list-style-type: none;
+    font-weight: bold;
+    height: 30px;
+    width: auto;
+}
+.home-body .home-nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.home-body .home-nav ul li:hover{
+    background-color: #0095ff;
+}
+.home-body .home-nav ol{
+    display: flex;
+    color: #f6f63a;
+    margin-left: auto;
+}
+.home-body .home-nav ol li{
+    margin: 15px;
+    list-style-type: none;
+    font-weight: bold;
+}
+.home-body .post{
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.home-body .post .ask-question button{
+    height:40px;
+    width: 400px;
+    margin-left: 0;
+}
+.question-body{
+    height: 300px;
+    width: auto;
+}
+.question-body .post {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+
+}
+.question-body .post .ask-question button{
+    height:40px;
+    width: 400px;
+    margin-left: 0;
+}

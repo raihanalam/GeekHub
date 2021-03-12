@@ -1,0 +1,42 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+    {% load static %}
+    <div class="home-body">
+        <div class="home-nav">
+            <ul>
+                <li><a style="text-decoration: none;color: white;" href="{% url 'home' %}">Home</a></li>
+                <li><a style="text-decoration: none;color: white;" href="{% url 'profile' %}">Profile</a></li>
+                <li><a style="text-decoration: none;color: white;" href="{% url 'home' %}">Settings</a></li>
+            </ul>
+            <ol>
+                <li>Geek: 127</li>
+                <li>Rank: pro</li>
+            </ol>
+        </div>
+        <div class="post">
+            <div class="ask-question">
+                <input type="text" name="question" style="height: 40px; width: 400px;" placeholder="Your question..."><br><br>
+                <input type="text" name="geek" style="height: 180px; width: 400px;" placeholder="Problem description..."><br><br>
+                <input type="text" name="tag" style="height: 30px; width: 200px;" placeholder="Tag"><br>
+                <button type="submit" name="post">Send</button>
+            </div>
+        </div>
+        <div class="top-geek-sec">
+            <h2>Top Question</h2><br>
+            <div class="row">
+                <p style="font-size: 20px; font-weight: bold;">Que: What is python?</p><br>
+
+                <small><a href="#">Geek</a> (1)  |</small><small>  By: raihanbd |</small><small> Time: 2.00Pm, 06.03.2021 </small><small style="font-size: 10px;color: gray;">#python #programming</small>
+            </div>
+            <div class="row">
+                <p style="font-size: 20px; font-weight: bold;">Que: How javascript works in browser?</p><br>
+
+                <small><a href="#">Geek</a> (0)  |</small><small>  By: raihanbd |</small><small> Time: 2.00Pm, 06.03.2021 </small><small style="font-size: 10px;color: gray;">#python #programming</small>
+            </div>
+        </div>
+    </div>
+{% endblock %}

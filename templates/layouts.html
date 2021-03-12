@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+{% load static %}
+<div class="header">
+    <div class="row">
+        <a style="color: white;text-decoration: none;" href="{% url 'index' %}"><h1><li class="fab fa-glide-g"></li><i class="fab fa-slack-hash"></i> GeekHub</h1></a>
+        {% if user.is_authenticated %}
+            <ul>
+                <i><a href="{% url 'home' %}"><button style="padding: 5px; height: 30px;width: auto; background-color: black; color: white; font-size: 15px;" type="button"><i class="fas fa-user"></i></button></a> </i>
+                <i><a href="{% url 'signout' %}">  <button style="padding: 5px; height: 30px;width: auto; background-color: #f48024;" type="button">Signout:<span style="color: black">{{user.username}}</span></button></a></i></a></i>
+            </ul>
+        {% else %}
+            <ul>
+                <i><a href="{% url 'signup' %}"><button type="button" >Signup</button> </a></i>
+                <i><a href="{% url 'signin' %}"><button type="button" >Signin</button> </a></i>
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+{% block content %}
+
+{% endblock %}
+
+<div class="footer">
+    <p>All rights reserved by GeekHub.io | © Copyright 2021</p>
+</div>
+
+</body>
+</html>

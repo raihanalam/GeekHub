@@ -1,0 +1,26 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% block title %}
+    Signin
+{% endblock %}
+{% block content %}
+    {% load static %}
+    <div class="container">
+        <div class="sign-form">
+        <h3 style="text-align: center; color: white;">Signin</h3>
+            {% for message in messages %}
+                <div class="alert-{{ message.tags }}" >
+                     <span aria-hidden="true">&times;</span>
+                    {{ message }}
+                </div>
+              {% endfor %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="username" name="username" placeholder="Handle"><br>
+                <input type="password" name="password" placeholder="Password"><br>
+                <button type="submit">Signin</button><br>
+            </form>
+            <p style="text-align: center;">Havn't any account? <a style="text-decoration: none; color: yellow;" href="{% url 'signup' %}">Signup</a> </p>
+        </div>
+    </div>
+{% endblock %}

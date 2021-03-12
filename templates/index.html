@@ -1,0 +1,40 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% block title %}
+    Geek Hub
+{% endblock %}
+{% block content %}
+    {% load static %}
+    <div class="ask-sec">
+        <div class="row">
+            <input type="text" placeholder="Your question here..."><button type="submit"><i class="fas fa-question"></i></button><br>
+        </div>
+        {% if user.is_authenticated == False %}
+            <p style="text-align: center; color: darkgray; font-size: 15px;">Want to ask descripted question? <a style="text-decoration: none" href="{% url 'question' %}">Click here!</a> </p>
+        {% endif %}
+    </div>
+    <div class="theme-sec">
+        <div class="row">
+            <h2>Community of people who <3 code.</h2><br>
+            <div class="set">
+                <i class="fas fa-utensils"></i>
+                <i class="fas fa-bed"></i>
+                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-redo-alt"></i>
+            </div>
+            {% if user.is_authenticated %}
+                <h2 style="color: white; font-size: 20px; " >Explere us <a style="text-decoration: none; color: black" href="{% url 'home' %}">here!</a> </h2>
+            {% else %}
+                <h2 style="color: white; font-size: 20px; " >Are you developer? <a style="text-decoration: none; color: black" href="{% url 'signup' %}">Join now</a> </h2>
+            {% endif %}
+        </div>
+    </div>
+    <div class="top-geek-sec">
+    <h2>Top Geeks</h2><br>
+    <div class="row">
+        <p style="font-size: 20px; font-weight: bold;">Que: What is python?</p><br>
+        <p><span style="font-weight: bold;">Geek</span>: Python is an interpreted, high-level and general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation. Python's design philosophy emphasizes code readability with its notable use of significant indentation. <a href="#">Read More</a> </p>
+        <br><small>Vote: 122  |</small><small>  By: raihanbd |</small><small> Time: 2.00Pm, 06.03.2021 </small><small style="font-size: 10px;color: gray;">#python #programming</small>
+    </div>
+    </div>
+{% endblock %}
