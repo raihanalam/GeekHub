@@ -10,7 +10,7 @@
             <input type="text" placeholder="Your question here..."><button type="submit"><i class="fas fa-question"></i></button><br>
         </div>
         {% if user.is_authenticated == False %}
-            <p style="text-align: center; color: darkgray; font-size: 15px;">Want to ask descripted question? <a style="text-decoration: none" href="{% url 'question' %}">Click here!</a> </p>
+            <p style="text-align: center; color: darkgray; font-size: 15px;">Are you stuck in a problem? <a style="text-decoration: none" href="{% url 'question' %}">Click here!</a> </p>
         {% endif %}
     </div>
     <div class="theme-sec">

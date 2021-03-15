@@ -23,6 +23,7 @@ button:hover{
 }
 .alert-alert-success{
     margin-top: 15px;
+    margin-bottom: 15px;
     color:rgb(71, 245, 71);
     text-align: center;
 }
@@ -225,7 +226,7 @@ button:hover{
     margin-left: 0;
 }
 .question-body{
-    height: 300px;
+    height: 460px;
     width: auto;
 }
 .question-body .post {

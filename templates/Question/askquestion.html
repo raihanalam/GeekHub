@@ -8,10 +8,19 @@
         <div class="question-body">
             <div class="post">
                 <div class="ask-question">
-                    <input type="text" name="question" style="height: 40px; width: 400px;" placeholder="Your question..."><br><br>
-                    <input type="text" name="geek" style="height: 180px; width: 400px;" placeholder="Problem description..."><br><br>
-                    <input type="text" name="tag" style="height: 30px; width: 200px;" placeholder="Tag"><br>
-                    <button type="submit" name="post">Send</button>
+                    {% for message in messages %}
+                    <div class="alert-{{ message.tags }}" >
+                         <span aria-hidden="true">&times;</span>
+                        {{ message }}
+                    </div>
+                     {% endfor %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="problem" style="height: 40px; width: 400px;" placeholder="Your problem..."><br><br>
+                        <input type="text" name="description" style="height: 180px; width: 400px;" placeholder="Problem description..."><br><br>
+                        <input type="text" name="tag" style="height: 30px; width: 200px;" placeholder="Tag"><br>
+                        <button type="submit">Send</button>
+                    </form>
                 </div>
             </div>
         </div>

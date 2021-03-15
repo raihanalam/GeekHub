@@ -10,6 +10,7 @@
             <ul>
                 <li><a style="text-decoration: none;color: white;" href="{% url 'home' %}">Home</a></li>
                 <li><a style="text-decoration: none;color: white;" href="{% url 'profile' %}">Profile</a></li>
+                <li><a style="text-decoration: none;color: white;" href="{% url 'home' %}">Messages</a></li>
                 <li><a style="text-decoration: none;color: white;" href="{% url 'home' %}">Settings</a></li>
             </ul>
             <ol>
@@ -19,24 +20,33 @@
         </div>
         <div class="post">
             <div class="ask-question">
-                <input type="text" name="question" style="height: 40px; width: 400px;" placeholder="Your question..."><br><br>
-                <input type="text" name="geek" style="height: 180px; width: 400px;" placeholder="Problem description..."><br><br>
-                <input type="text" name="tag" style="height: 30px; width: 200px;" placeholder="Tag"><br>
-                <button type="submit" name="post">Send</button>
+                {% for message in messages %}
+                <div class="alert-{{ message.tags }}" >
+                     <span aria-hidden="true">&times;</span>
+                    {{ message }}
+                </div>
+                 {% endfor %}
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="problem" style="height: 40px; width: 400px;" placeholder="Your problem..."><br><br>
+                    <textarea name="description" style="height: 120px; width: 400px;" placeholder="Place your problem description here..."></textarea><br><br>
+                    <input type="text" name="tag" style="height: 30px; width: 200px;" placeholder="Tag"><br>
+                    <button type="submit">Send</button>
+                </form>
             </div>
+            
         </div>
         <div class="top-geek-sec">
             <h2>Top Question</h2><br>
-            <div class="row">
-                <p style="font-size: 20px; font-weight: bold;">Que: What is python?</p><br>
+            {%for q in qdata reversed %}
+                {% if forloop.counter <= 10 %}
+                    <div class="row">
+                        <p style="font-size: 20px; font-weight: bold;">{{q.problem}}</p><br>
 
-                <small><a href="#">Geek</a> (1)  |</small><small>  By: raihanbd |</small><small> Time: 2.00Pm, 06.03.2021 </small><small style="font-size: 10px;color: gray;">#python #programming</small>
-            </div>
-            <div class="row">
-                <p style="font-size: 20px; font-weight: bold;">Que: How javascript works in browser?</p><br>
-
-                <small><a href="#">Geek</a> (0)  |</small><small>  By: raihanbd |</small><small> Time: 2.00Pm, 06.03.2021 </small><small style="font-size: 10px;color: gray;">#python #programming</small>
-            </div>
+                        <small><a href="#">Geek</a> (1)  |</small><small>  By: {{q.by}} |</small><small> Time: {{q.time}} </small><small style="font-size: 10px;color: gray;">{{q.tag}}</small>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
